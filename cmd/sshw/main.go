@@ -100,6 +100,7 @@ func choose(parent, trees []*sshw.Node) *sshw.Node {
 		Templates:    templates,
 		Size:         20,
 		HideSelected: true,
+		Stdout:       &bellSkipper{},
 		Searcher: func(input string, index int) bool {
 			node := trees[index]
 			content := fmt.Sprintf("%s %s %s", node.Name, node.User, node.Host)
